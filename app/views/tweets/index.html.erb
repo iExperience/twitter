@@ -1,0 +1,11 @@
+<h1>Tweets</h1>
+
+Welcome to my tweets app!
+<br/><br/>
+<a href="http://localhost:3000/tweets/new">+ New Tweet</a>
+<br/>
+<ol>
+<% @tweets.each do |tweet| %>
+  <li><%= tweet.body %></li>
+<% end %>
+</ol>
