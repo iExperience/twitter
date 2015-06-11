@@ -1,0 +1,26 @@
+
+
+$primary-color: #CBCAFE;
+$primary-text-color: #595758;
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+$primary-font-family: Roboto, sans-serif;
+$secondary-font-family: Open Sans, sans-serif;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $primary-color;
+  color: $primary-text-color;
+  font-family: $primary-font-family;
+}
+
+#container {
+  background-color: #FFEEF2;
+  width: 500px;
+  margin: 0px auto;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
