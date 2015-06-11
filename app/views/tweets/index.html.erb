@@ -1,11 +1,15 @@
 <h1>Tweets</h1>
 
 Welcome to my tweets app!
+
+<%= render :partial => 'errors', :locals => {:tweet => @tweet} %>
+
 <br/><br/>
-<%= link_to '+ New Tweet', tweets_new_path %>
+<%= render :partial => 'form', :locals => {:tweet => @tweet} %>
 <br/>
-<ol>
+
+<ul>
 <% @tweets.each do |tweet| %>
-  <li><%= tweet.body %></li>
+  <li><%= link_to(tweet.user.handle, "/users/#{tweet.user.id}") %>: <%= tweet.body %></li>
 <% end %>
 </ol>
