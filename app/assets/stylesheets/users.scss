@@ -1,5 +1,5 @@
-div#profile {
-  padding: 15px;
+.twitter_profile {
+  padding: 15px 0 25px 0;
 
   table {
     width: 100%;
@@ -9,44 +9,46 @@ div#profile {
     }
 
     .twitter_handle {
-      font-size: 40px;
-      font-weight: bold;
+      font-size: 30px;
       margin-bottom: 5px;
-    }
-
-    .twitter_name {
-      font-size: 20px;
-      font-family: $secondary-font-family;
+      font-family: $fancy-font-family;
+      text-align: center;
+      color: $highlight-text-color;
     }
   }
 }
 
-table#user_tweets {
+.tweets_list {
   width: 100%;
+  padding: 0;
+  border-spacing: 0;
 
   td {
     padding: 15px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #eee;
   }
-  
 
   .tweet_body {
     font-size: 25px;
+    font-family: $fancy-font-family;
+    color: $secondary-text-color;
+  }
+
+  .tweet_timestamp {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 5px;
   }
 }
 
 /* Rounded avatars */
 .avatar {
-    float: right;
-    margin-top: 1em;
-    margin-right: 25px;
-    position: relative;
-
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
 
-    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
-    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
 }

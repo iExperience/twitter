@@ -1,26 +1,51 @@
 
 
-$primary-color: #CBCAFE;
+$primary-background-color: #3498DB;
+$secondary-background-color: #FFF9E6;
 $primary-text-color: #595758;
+$secondary-text-color: #463D36;
+$highlight-text-color: #F7888E;
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
 
 $primary-font-family: Roboto, sans-serif;
 $secondary-font-family: Open Sans, sans-serif;
+$fancy-font-family: Lora, sans-serif;
 
 body {
   margin: 0;
   padding: 0;
-  background-color: $primary-color;
+  background-color: $primary-background-color;
   color: $primary-text-color;
   font-family: $primary-font-family;
 }
 
+footer {
+  padding: 30px 0 15px 0;
+  color: #ccc;
+  font-family: $secondary-font-family;
+  text-align: center;
+}
+
+a {
+  color: $highlight-text-color;
+  text-decoration: none;
+}
+
 #container {
-  background-color: #FFEEF2;
+  background-color: $secondary-background-color;
   width: 500px;
+  padding: 15px;
   margin: 0px auto;
+  margin-top: 30px;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  border-radius: 5%;
+  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
 }
