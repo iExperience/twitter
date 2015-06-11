@@ -9,8 +9,11 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(params["tweet"].permit(:body, :user_id, :fav_count))
-    @tweet.save
-
-    redirect_to '/tweets'
+    
+    if @tweet.save
+      redirect_to '/tweets'
+    else
+      render :new
+    end
   end
 end

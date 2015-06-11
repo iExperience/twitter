@@ -2,7 +2,7 @@
 
 Welcome to my tweets app!
 <br/><br/>
-<a href="http://localhost:3000/tweets/new">+ New Tweet</a>
+<%= link_to '+ New Tweet', tweets_new_path %>
 <br/>
 <ol>
 <% @tweets.each do |tweet| %>
