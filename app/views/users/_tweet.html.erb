@@ -1,0 +1,10 @@
+<tr>
+  <td>
+    <div class="tweet_body">
+      <%= tweet.body %>
+    </div>
+    <div class="tweet_timestamp">
+      <%= time_ago_in_words(tweet.created_at) %> ago
+    </div>
+  </td>
+</tr>
