@@ -11,6 +11,14 @@
 <div id="container">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <% if user_signed_in? %>
+    Signed in as <%=current_user.handle%> | 
+    <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to 'Sign In', user_session_path %>
+  <% end %>
+
+
   <%= yield %>
   <footer>made with &#9825; by <a href="twitter.com/daretorant">@daretorant</a></footer>
 </div>
