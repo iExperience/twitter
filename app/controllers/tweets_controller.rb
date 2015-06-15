@@ -1,11 +1,8 @@
 class TweetsController < ApplicationController
   before_action :load_tweets, :only => [:index, :create]
-  before_action :load_new_tweet, :only => [:index, :new]
+  before_action :load_new_tweet, :only => [:index]
 
   def index
-  end
-
-  def new
   end
 
   def create

@@ -1,5 +1,3 @@
-<%= render :partial => 'errors', :locals => {:tweet => @tweet} %>
-
 <div class="row">
   <div class="col-sm-4">
     <% if current_user %>
@@ -12,6 +10,7 @@
   </div>
   <div class="col-sm-8">
     <div class="main-column">
+      <%= render :partial => 'errors', :locals => {:tweet => @tweet} %>
       <div class="padded">
         <%= render :partial => 'form', :locals => {:tweet => @tweet} %>
       </div>
