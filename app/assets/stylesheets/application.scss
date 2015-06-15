@@ -1,2 +1,19 @@
+$primary-background-color: #3D3235;
+$secondary-background-color: #FFF9E6;
+$primary-text-color: #595758;
+$secondary-text-color: #463D36;
+$highlight-text-color: #F23A46;
+
+$brand-danger: #87255B;
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+
+$primary-font-family: Open Sans, sans-serif;
+$fancy-font-family: Lora, sans-serif;
+
+$font-family-sans-serif: $primary-font-family;
+
+@import 'bootstrap';
 @import 'style';
-@import 'users';

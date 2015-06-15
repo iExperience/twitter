@@ -28,6 +28,6 @@ class TweetsController < ApplicationController
     end
 
     def load_tweets
-      @tweets = Tweet.all
+      @tweets = Tweet.order(created_at: :desc)
     end
 end

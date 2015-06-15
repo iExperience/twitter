@@ -1,0 +1,8 @@
+<tr class="index-tweet">
+  <td class="padded">
+    <p><%= link_to tweet.user.handle, "/users/#{tweet.user.id}" %>: <%= tweet.body %></p>
+    <p class="gray small italic pull-right">
+      Posted <%= time_ago_in_words tweet.created_at %> ago
+    </p>
+  </td>
+</tr>

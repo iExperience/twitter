@@ -1,0 +1,19 @@
+<div class="sidebar padded">
+  <table>
+    <tr>
+      <td class="text-center"><%= image_tag 'FatCatMoon.jpg', :class => 'avatar' %></td>
+    </tr>
+    <tr>
+     <td>
+        <div class="twitter_handle">
+          <%= link_to current_user.handle, current_user %>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="text-center"><%= current_user.email %></p>
+      </td>
+    </tr>
+  </table>
+</div>

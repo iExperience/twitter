@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Twitter</title>
+  <title>The Bomb Twitter</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
 </head>
 <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        The Bomb Twitter
+      </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <% if user_signed_in? %>
+        <ul class="nav navbar-right">
+          <%= link_to destroy_user_session_path, :method => :delete do %>
+            <button type="button" class="btn btn-danger navbar-btn">Sign out</button>
+          <% end %>
+          <div class="navbar-text">
+            Signed in as 
+            <%= link_to current_user.handle, current_user %>
+          </div>
+        </ul>
+      <% else %>
+        <%= link_to user_session_path, :class => "navbar-right" do %>
+          <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</nav>
 
-<div id="container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <% if user_signed_in? %>
-    Signed in as <%=current_user.handle%> | 
-    <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to 'Sign In', user_session_path %>
+<div class="container">
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>    
   <% end %>
 
   <%= yield %>
-
-  <footer>made with &#9825; by <a href="twitter.com/daretorant">@daretorant</a></footer>
-
-    
 </div>
 
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <footer class="text-center">
+      made with &#9825; by <a href="http://twitter.com/daretorant">@daretorant</a> + <%= link_to 'rafi', 'http://rafi.me' %>
+    </footer>
+  </div>
+</div>
 </body>
 </html>
 

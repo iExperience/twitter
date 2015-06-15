@@ -1,15 +1,25 @@
-<%= render partial: "header" %>
-
-<h4>Tweets</h4>
-
 <%= render :partial => 'errors', :locals => {:tweet => @tweet} %>
 
-<br/><br/>
-<%= render :partial => 'form', :locals => {:tweet => @tweet} %>
-<br/>
-
-<ul>
-<% @tweets.each do |tweet| %>
-  <li><%= link_to(tweet.user.handle, "/users/#{tweet.user.id}") %>: <%= tweet.body %></li>
-<% end %>
-</ol>
+<div class="row">
+  <div class="col-sm-4">
+    <% if current_user %>
+      <%= render :partial => 'sidebar' %>
+    <% else %>
+      <div class="sidebar padded">
+        <%= render file: 'devise/registrations/new' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-sm-8">
+    <div class="main-column">
+      <div class="padded">
+        <%= render :partial => 'form', :locals => {:tweet => @tweet} %>
+      </div>
+      <table>
+        <% @tweets.each do |tweet| %>
+          <%= render partial: 'tweet', locals: {tweet: tweet} %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
