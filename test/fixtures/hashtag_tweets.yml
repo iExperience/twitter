@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: hashtag_tweets
+#
+#  id         :integer          not null, primary key
+#  tweet_id   :integer
+#  hashtag_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

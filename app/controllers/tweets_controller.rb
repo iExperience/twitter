@@ -9,11 +9,8 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.new(params["tweet"].permit(:body))
-    # THIS IS A HACK
-    # FIX THIS USING AUTHORIZATION
-    @tweet.user = User.last
-    
+    @tweet = Tweet.new(tweet_params)
+
     if @tweet.save
       redirect_to '/tweets'
     else
@@ -22,6 +19,10 @@ class TweetsController < ApplicationController
   end
 
   private
+
+    def tweet_params
+      params["tweet"].permit(:body).merge(:user => current_user)
+    end
 
     def load_new_tweet
       @tweet = Tweet.new

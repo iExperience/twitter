@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: tweets
+#
+#  id         :integer          not null, primary key
+#  body       :string
+#  user_id    :integer
+#  fav_count  :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Tweet < ActiveRecord::Base
   belongs_to :user
   has_many :hashtag_tweets
