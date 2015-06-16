@@ -5,4 +5,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @tweets = @user.tweets
   end
+
+  def index
+    @users = User.all
+  end
 end
