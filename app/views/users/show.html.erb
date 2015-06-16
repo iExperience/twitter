@@ -1,7 +1,9 @@
 <div class="twitter_profile">
   <table>
     <tr>
-      <td class="photo"><%=image_tag 'FatCatMoon.jpg', :class => 'avatar' %></td>
+      <td class="photo">
+        <%= image_tag @user.avatar.url(:thumb), :class => 'avatar' %>
+      </td>
     </tr>
     <tr>
      <td>

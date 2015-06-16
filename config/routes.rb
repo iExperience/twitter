@@ -8,13 +8,9 @@ Rails.application.routes.draw do
   root 'tweets#index'
 
   # Example of regular route:
-  get 'tweets' => 'tweets#index'
-  get 'tweets/new' => 'tweets#new'
-
-  post 'tweets' => 'tweets#create'
-
-  get 'users/:id' => 'users#show'
-  get 'users' => 'users#index'
+  resources :tweets, :only => [:index, :new, :create]
+  
+  resources :users, :only => [:show, :index, :edit]
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

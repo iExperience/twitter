@@ -1,8 +1,18 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  private
+  before_filter :configure_permitted_parameters
 
-  def sign_up_params
-    params.require(:user).permit(:handle, :email, :password, :password_confirmation)
+  protected
+
+  # my custom fields are :name, :heard_how
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(:handle, :avatar,
+        :email, :password, :password_confirmation)
+    end
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:handle, :avatar, :current_password,
+        :email, :password, :password_confirmation)
+    end
   end
 end
