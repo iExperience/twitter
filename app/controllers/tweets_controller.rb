@@ -19,18 +19,15 @@ class TweetsController < ApplicationController
   end
 
   def map
-    @tweets = Tweet.all
-    @tweet_pins = get_tweet_pins(@tweets)
-  end
-
-  private
-
-    def get_tweet_pins(tweets)
-      Gmaps4rails.build_markers(tweets) do |tweet, marker|
+    @tweets = Tweet.with_location
+    @tweet_pins = Gmaps4rails.build_markers(@tweets) do |tweet, marker|
       marker.lat tweet.latitude
       marker.lng tweet.longitude
       marker.infowindow tweet.body
     end
+  end
+
+  private
 
     def tweet_params
       params["tweet"].permit(:body).merge(:user => current_user)

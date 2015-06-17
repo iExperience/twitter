@@ -1,6 +1,5 @@
-<%= form_for(tweet, {:url => "/tweets"}) do |f| %>
-  <%= f.label :body %>:
-  <%= f.text_field :body %>
+<%= form_for(tweet, {:url => "/tweets", :html => {:class => 'tweet_form'}}) do |f| %>
+  <%= f.text_area :body %>
   <br/>
   <%= f.submit %>
 <% end %>

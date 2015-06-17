@@ -21,4 +21,6 @@ class Tweet < ActiveRecord::Base
   })
 
   validates(:user, :presence => true)
+
+  scope :with_location, -> { where("latitude IS NOT NULL AND longitude IS NOT NULL") }
 end

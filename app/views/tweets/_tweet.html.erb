@@ -4,7 +4,7 @@
       <%= tweet.body %>
     </div>
     <div class="tweet_timestamp">
-      <%= time_ago_in_words(tweet.created_at) %> ago
+      <%= time_ago_in_words(tweet.created_at) %> ago by <%= link_to tweet.user.handle, user_path(tweet.user) %>
     </div>
   </td>
 </tr>

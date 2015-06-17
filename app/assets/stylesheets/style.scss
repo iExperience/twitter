@@ -49,3 +49,27 @@ a {
     -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
     box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
 }
+
+.tweets_list {
+  width: 100%;
+  padding: 0;
+  border-spacing: 0;
+
+  td {
+    padding: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  .tweet_body {
+    font-size: 25px;
+    font-family: $fancy-font-family;
+    color: $secondary-text-color;
+  }
+
+  .tweet_timestamp {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 5px;
+  }
+}

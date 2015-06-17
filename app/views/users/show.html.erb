@@ -15,6 +15,6 @@
 
 <table class="tweets_list">
 <% @tweets.each do |tweet| %>
-  <%= render partial: "tweet", locals: {tweet: tweet} %>
+  <%= render partial: "tweets/tweet", locals: {tweet: tweet} %>
 <% end %>
 </table>

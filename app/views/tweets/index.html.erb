@@ -1,15 +1,14 @@
-<%= render partial: "header" %>
-
-<h4>Tweets</h4>
-
 <%= render :partial => 'errors', :locals => {:tweet => @tweet} %>
 
 <br/><br/>
-<%= render :partial => 'form', :locals => {:tweet => @tweet} %>
-<br/>
+<h2 style="text-align:center;"><%= link_to 'Visit the Tweets Map!', tweets_map_path %></h2>
 
-<ul>
+<div class="new_tweet_wrapper">
+<%= render :partial => 'form', :locals => {:tweet => @tweet} %>
+</div>
+
+<table class="tweets_list">
 <% @tweets.each do |tweet| %>
-  <li><%= link_to(tweet.user.handle, "/users/#{tweet.user.id}") %>: <%= tweet.body %></li>
+  <%= render partial: "tweet", locals: {tweet: tweet} %>
 <% end %>
-</ol>
+</table>

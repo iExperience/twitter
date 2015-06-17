@@ -18,29 +18,7 @@
   }
 }
 
-.tweets_list {
-  width: 100%;
-  padding: 0;
-  border-spacing: 0;
 
-  td {
-    padding: 15px;
-    border-top: 1px solid #eee;
-  }
-
-  .tweet_body {
-    font-size: 25px;
-    font-family: $fancy-font-family;
-    color: $secondary-text-color;
-  }
-
-  .tweet_timestamp {
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #ccc;
-    margin-top: 5px;
-  }
-}
 
 /* Rounded avatars */
 .avatar {
