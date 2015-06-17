@@ -18,6 +18,15 @@ class TweetsController < ApplicationController
     end
   end
 
+  def map
+    @tweets = Tweet.all
+    @tweet_pins = Gmaps4rails.build_markers(@tweets) do |tweet, marker|
+      marker.lat tweet.latitude
+      marker.lng tweet.longitude
+      marker.infowindow tweet.body
+    end
+  end
+
   private
 
     def tweet_params

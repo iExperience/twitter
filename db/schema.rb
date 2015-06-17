@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616085055) do
+ActiveRecord::Schema.define(version: 20150617140350) do
 
   create_table "hashtag_tweets", force: :cascade do |t|
     t.integer  "tweet_id"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20150616085055) do
     t.integer  "fav_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "users", force: :cascade do |t|
