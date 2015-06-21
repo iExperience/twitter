@@ -6,6 +6,7 @@
 
 User.destroy_all
 user = User.create(handle: "@daretorant", name: "Salman Ansari", email: "salman@ixperience.co.za", password: "password", password_confirmation: "password")
+other_user = User.create(handle: "@khanotations", name: "Rafi Khan", email: "rafi@ixperience.co.za", password: "password", password_confirmation: "password")
 
 Tweet.destroy_all
 tweets = Tweet.create([

@@ -23,4 +23,19 @@ class Tweet < ActiveRecord::Base
   validates(:user, :presence => true)
 
   scope :with_location, -> { where("latitude IS NOT NULL AND longitude IS NOT NULL") }
+
+  after_create :create_hashtags
+  #after_create :send_tweet_email
+
+  private
+
+  def send_tweet_email
+    TweetMailer.tweet_email(self).deliver
+  end
+
+  def create_hashtags
+    self.body.scan(/(#[a-zA-Z0-9]+)/).flatten.each do |hashtag|
+      self.hashtags << Hashtag.new(body: hashtag[1..hashtag.size])
+    end
+  end
 end
