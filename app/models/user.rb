@@ -57,7 +57,8 @@ class User < ActiveRecord::Base
   def profile_pic
     case self.provider
     when "facebook" then "http://graph.facebook.com/#{self.uid}/picture"
-    else self.avatar.url(:thumb)
+    else 
+      self.avatar_file_name ? self.avatar.url(:thumb) : "FatCatMoon.jpg"
     end
   end
 end

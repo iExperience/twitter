@@ -7,6 +7,9 @@
 # Ignore apple Finder files
 .DS_Store
 
+# Ignore dotenv file
+.env
+
 # Ignore bundler config.
 /.bundle
 

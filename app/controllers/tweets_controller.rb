@@ -13,6 +13,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
 
     if @tweet.save
+      TweetMailer.tweet_email(@tweet).deliver_now
       redirect_to '/tweets'
     else
       render :index
@@ -48,6 +49,6 @@ class TweetsController < ApplicationController
     end
 
     def load_tweets
-      @tweets = Tweet.all
+      @tweets = Tweet.all.order('id DESC').includes(:hashtags, :user)
     end
 end
