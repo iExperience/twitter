@@ -4,6 +4,9 @@
       <%= tweet.body %>
     </div>
     <div class="tweet_timestamp">
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to image_tag('trash-icon.png'), tweet_path(tweet), :method => 'DELETE' %>
+      <% end %>
       <%= time_ago_in_words(tweet.created_at) %> ago by <%= link_to tweet.user.handle, user_path(tweet.user) %>
     </div>
     <div class="hashtags">

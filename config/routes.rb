@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root 'tweets#index'
 
   # Example of regular route:
-  resources :tweets, :only => [:index, :new, :create]
+  resources :tweets, :only => [:index, :new, :create, :destroy]
   get 'tweets/map' => 'tweets#map'
   
   resources :users, :only => [:show, :index, :edit]

@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   before_action :load_tweets, :only => [:index, :create]
   before_action :load_new_tweet, :only => [:index, :new]
+  before_action :authenticate_admin!, :only => [:destroy]
 
   def index
   end
@@ -16,6 +17,15 @@ class TweetsController < ApplicationController
     else
       render :index
     end
+  end
+
+  def destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+
+    flash[:notice] = "Your tweet was deleted successfully."
+
+    redirect_to tweets_path
   end
 
   def map
@@ -34,7 +44,7 @@ class TweetsController < ApplicationController
     end
 
     def load_new_tweet
-      @tweet = Tweet.new
+      @new_tweet = Tweet.new
     end
 
     def load_tweets

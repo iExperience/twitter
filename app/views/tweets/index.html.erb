@@ -1,10 +1,10 @@
-<%= render :partial => 'errors', :locals => {:tweet => @tweet} %>
+<%= render :partial => 'errors', :locals => {:tweet => @new_tweet} %>
 
 <br/><br/>
 <h2 style="text-align:center;"><%= link_to 'Visit the Tweets Map!', tweets_map_path %></h2>
 
 <div class="new_tweet_wrapper">
-<%= render :partial => 'form', :locals => {:tweet => @tweet} %>
+<%= render :partial => 'form', :locals => {:tweet => @new_tweet} %>
 </div>
 
 <table class="tweets_list">
