@@ -36,18 +36,11 @@ a {
 
 #container {
   background-color: $secondary-background-color;
-  width: 500px;
+  width: 600px;
   padding: 15px;
   margin: 0px auto;
-  margin-top: 30px;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
-  -webkit-border-radius: 5%;
-  -moz-border-radius: 5%;
-  border-radius: 5%;
-  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
-    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
 }
 
 .tweets_list {
@@ -72,4 +65,83 @@ a {
     color: #ccc;
     margin-top: 5px;
   }
+}
+
+.alert {
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+
+.notice {
+  background-color: green;
+  color: white;
+  padding: 10px;
+}
+
+.twitter_profile {
+  padding: 15px 0 0px 0;
+
+  table {
+    width: 100%;
+
+    .photo {
+      text-align: center;
+    }
+
+    .twitter_handle {
+      font-size: 30px;
+      margin-bottom: 5px;
+      font-family: $fancy-font-family;
+      text-align: center;
+      color: $highlight-text-color;
+    }
+  }
+}
+
+.devise_links {
+  text-align:right;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.tweet_form {
+  margin-bottom: 20px;
+  textarea {
+    font-size: 20px;
+    padding: 5px;
+    width: 400px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+  }
+
+  input[type='submit'] {
+    font-weight: bold;
+    font-size: 20px;
+    width: 170px;
+    padding:5px 15px; 
+    background: $highlight-text-color; 
+    border:0 none;
+    cursor:pointer;
+    color: #fff;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    font-family: $fancy-font-family;
+  }
+}
+
+.new_tweet_wrapper {
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Rounded avatars */
+.avatar {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee, 0 2px 5px 4px rgba(0,0,0,.2);
 }

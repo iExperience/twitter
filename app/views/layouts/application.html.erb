@@ -10,15 +10,32 @@
 <body>
 
 <div id="container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if notice %><p class="notice"><%= notice %></p><% end %>
+  <% if alert %><p class="alert"><%= alert %></p><% end %>
+
+  <div class="devise_links">
   <% if user_signed_in? %>
-    <%= image_tag current_user.profile_pic %>
-    Signed in as <%=current_user.handle%> | 
     <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %> | <%=link_to 'Edit Profile', edit_user_registration_path %>
   <% else %>
     <%= link_to 'Sign In', user_session_path %> |
     <%= link_to 'Sign in with Facebook', user_omniauth_authorize_path(:facebook)  %>
+  <% end %>
+  </div>
+  <% if user_signed_in? %>
+    <div class="twitter_profile">
+      <table>
+        <tr>
+          <td class="photo">
+            <%= image_tag current_user.profile_pic, :class => 'avatar' %>
+          </td>
+        </tr>
+        <tr>
+         <td>
+            <div class="twitter_handle"><%= current_user.handle %></div>
+          </td>
+        </tr>
+      </table>
+    </div>
   <% end %>
 
   <%= yield %>
