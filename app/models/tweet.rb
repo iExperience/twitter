@@ -29,6 +29,10 @@ class Tweet < ActiveRecord::Base
 
   private
 
+  def send_tweet_email
+    TweetMailer.tweet_email(self).deliver_now
+  end
+
   def create_hashtags
     self.body.scan(/(#[a-zA-Z0-9]+)/).flatten.each do |hashtag|
       self.hashtags << Hashtag.new(body: hashtag[1..hashtag.size])
