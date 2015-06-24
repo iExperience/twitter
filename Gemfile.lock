@@ -127,6 +127,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    pg (0.18.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -222,6 +223,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   paperclip (~> 4.2)
+  pg
   pry-byebug
   puma
   quiet_assets
